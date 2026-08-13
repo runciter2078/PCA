@@ -84,10 +84,21 @@ high_loadings_PC-<i>.csv       Variables with |loading| above the threshold, per
 pca_biplot.png                 PC-1 vs PC-2 biplot with the top contributing variables
 pca_scores.csv                 Transformed (PCA-projected) observations
 ```
+## Sample dataset
+
+A ready-to-use `SPYV3.csv` (5 years of daily SPY data with engineered technical indicators, generated 2026-08-13) is bundled in this repository so you can run the scripts above without depending on the original proprietary dataset. It was produced with `generate_spy_dataset.py`, which downloads real SPY data via `yfinance` and computes technical/categorical features under the same column names the scripts expect.
+
+To regenerate it with fresh data:
+
+```bash
+pip install yfinance
+python generate_spy_dataset.py --months 60 --output SPYV3.csv
+```
+
+Note: this is an independently engineered dataset, not a reconstruction of the original SPYV3.csv used when this project was first developed — see `generate_spy_dataset.py` for the exact feature definitions.
 
 ## Notes and limitations
 
-- The dataset is not included in this repository.
 - Standardizing is the recommended default for this kind of mixed-scale financial dataset; only switch to `--scaler minmax` if you have a specific reason to bound features to `[0, 1]` before PCA.
 - `--variance-threshold` and `--loading-threshold` are reasonable starting points, not universal values — adjust them based on your own dataset and analysis goals.
 
