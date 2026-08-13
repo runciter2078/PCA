@@ -12,7 +12,7 @@ This repository provides a Principal Component Analysis (PCA) pipeline in Python
 
 ## Repository structure
 
-- `pca_analysis.py` — Full pipeline: data loading, preprocessing (categorical encoding, scaling), PCA fitting with automatic or manual component selection, explained variance reporting, loadings analysis and visual diagnostics.
+- `pca_analysis.py` - Full pipeline: data loading, preprocessing (categorical encoding, scaling), PCA fitting with automatic or manual component selection, explained variance reporting, loadings analysis and visual diagnostics.
 - `README.md` — This file.
 - `LICENSE` — Project license (MIT).
 
